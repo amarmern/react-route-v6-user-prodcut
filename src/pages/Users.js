@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 
 function Users() {
-  const [state, setState] = useState({ uname: '', email: '', pasword: '' });
+  const [state, setState] = useState({
+    uname: '',
+    city: '',
+    email: '',
+    pasword: '',
+  });
 
   const handleChange = (e) => {
     // const { name, value } = e.target;
@@ -31,9 +36,9 @@ function Users() {
         <div>
           <input
             type="text"
-            name={state.name}
+            name="uname"
             placeholder="Please Enter the Name"
-            value={state.name}
+            value={state.uname}
             onChange={handleChange}
             // onChange={(e) => setState({ ...state, name: e.target.value })}
           />
