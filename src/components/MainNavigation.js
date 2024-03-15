@@ -31,6 +31,16 @@ function MainNavigation() {
               Products
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              to="/posts"
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
+            >
+              Posts
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </header>
