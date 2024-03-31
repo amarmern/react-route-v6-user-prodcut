@@ -41,6 +41,16 @@ function MainNavigation() {
               Posts
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              to="/tictoc"
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
+            >
+              Tic toc
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </header>
