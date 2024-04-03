@@ -10,10 +10,6 @@ function Practice() {
     setList(newItem);
   };
 
-  const handleClick = (e) => {
-    let val = e.currentTarget.innerText;
-  };
-
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -24,7 +20,7 @@ function Practice() {
           onChange={(e) => setItem(e.target.value)}
         />
         <div>
-          <ul onClick={handleClick}>{list && list.map((i) => <li>{i}</li>)}</ul>
+          <ul>{list && list.map((i) => <li>{i}</li>)}</ul>
         </div>
         <button>add</button>
       </form>

@@ -13,6 +13,9 @@ import Myref from './components/Myref';
 import TicTac from './pages/TicTac';
 import Practice from './pages/Practice';
 import MyApp from './components/MyApp';
+import { ArrayAdd } from './pages/ArrayAdd';
+import ProductCountIncrement from './Company/Gspann/ProductCountIncrement';
+import ReducerCounter from './Company/Gspann/ReducerCounter';
 
 const router = createBrowserRouter([
   {
@@ -35,10 +38,13 @@ function App() {
     <div className="App">
       <div>Learn React</div>
       {/* <MyApp /> */}
-      <RouterProvider router={router} />
+      {/* <RouterProvider router={router} /> */}
       {/* <Greeting /> */}
       {/* <Myref /> */}
       {/* <Practice /> */}
+      {/* <ArrayAdd /> */}
+      <ProductCountIncrement />
+      {/* <ReducerCounter /> */}
     </div>
   );
 }
