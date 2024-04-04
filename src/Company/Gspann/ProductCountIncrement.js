@@ -33,6 +33,13 @@ function ProductCountIncrement() {
     setProducts(newItem);
   }
 
+  function handleDecrement(productId) {
+    const newItem = products.map((item) =>
+      item.id === productId ? { ...item, count: item.count - 1 } : item
+    );
+    setProducts(newItem);
+  }
+
   return (
     <ul>
       {products.map((product) => (
@@ -44,6 +51,13 @@ function ProductCountIncrement() {
             }}
           >
             +
+          </button>
+          <button
+            onClick={() => {
+              handleDecrement(product.id);
+            }}
+          >
+            -
           </button>
         </li>
       ))}
