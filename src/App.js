@@ -16,6 +16,7 @@ import MyApp from './components/MyApp';
 import { ArrayAdd } from './pages/ArrayAdd';
 import ProductCountIncrement from './Company/Gspann/ProductCountIncrement';
 import ReducerCounter from './Company/Gspann/ReducerCounter';
+import ProductSearch from './Company/Trika/ProductSearch';
 
 const router = createBrowserRouter([
   {
@@ -37,13 +38,14 @@ function App() {
   return (
     <div className="App">
       <div>Learn React</div>
+      <ProductSearch />
       {/* <MyApp /> */}
       {/* <RouterProvider router={router} /> */}
       {/* <Greeting /> */}
       {/* <Myref /> */}
       {/* <Practice /> */}
       {/* <ArrayAdd /> */}
-      <ProductCountIncrement />
+      {/* <ProductCountIncrement /> */}
       {/* <ReducerCounter /> */}
     </div>
   );
