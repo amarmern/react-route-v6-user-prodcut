@@ -12,7 +12,7 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    fetch(`https://dummyjson.com/products/search?q=${terms}`)
+    fetch(`https://dummyjson.com/products/search?q=${(products.brand = terms)}`)
       .then((res) => res.json())
       .then((data) => setProducts(data.products));
   }, [terms]);
