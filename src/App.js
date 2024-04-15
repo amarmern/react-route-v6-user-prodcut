@@ -11,12 +11,18 @@ import Greeting from './components/Greeting';
 import PostsPage from './pages/Posts';
 import Myref from './components/Myref';
 import TicTac from './pages/TicTac';
-import Practice from './pages/Practice';
 import MyApp from './components/MyApp';
 import { ArrayAdd } from './pages/ArrayAdd';
 import ProductCountIncrement from './Company/Gspann/ProductCountIncrement';
 import ReducerCounter from './Company/Gspann/ReducerCounter';
 import ProductSearch from './Company/Trika/ProductSearch';
+import Infogain from './Company/infogain/Infogain';
+import Hero from './components/ErrorsDemo/Hero';
+//import ErrorBoundary from './components/ErrorsDemo/ErrorBoundary';
+import ClickCounter from './components/ErrorsDemo/ClickCounter';
+import { ErrorBoundary } from 'react-error-boundary';
+import FallbackComponet from './components/ErrorsDemo/FallbackComponet';
+import Practice from './components/Practice';
 
 const router = createBrowserRouter([
   {
@@ -33,20 +39,32 @@ const router = createBrowserRouter([
     ],
   },
 ]);
+const errorHandler = (error, errorInfo) => {
+  console.log('Loging', error, errorInfo);
+};
 
 function App() {
   return (
     <div className="App">
-      <div>Learn React</div>
-      <ProductSearch />
+      <ErrorBoundary
+        FallbackComponent={FallbackComponet}
+        onError={errorHandler}
+      >
+        <div>Learn React</div>
+        <Infogain />
+        {/* <Hero heroName="Jocker" /> */}
+        <ClickCounter />
+      </ErrorBoundary>
+
+      {/* <ProductSearch /> */}
       {/* <MyApp /> */}
       {/* <RouterProvider router={router} /> */}
       {/* <Greeting /> */}
       {/* <Myref /> */}
-      {/* <Practice /> */}
       {/* <ArrayAdd /> */}
       {/* <ProductCountIncrement /> */}
       {/* <ReducerCounter /> */}
+      <Practice />
     </div>
   );
 }
