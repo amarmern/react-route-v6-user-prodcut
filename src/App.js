@@ -19,10 +19,12 @@ import ProductSearch from './Company/Trika/ProductSearch';
 import Infogain from './Company/infogain/Infogain';
 import Hero from './components/ErrorsDemo/Hero';
 //import ErrorBoundary from './components/ErrorsDemo/ErrorBoundary';
-import ClickCounter from './components/ErrorsDemo/ClickCounter';
+//import ClickCounter from './components/ErrorsDemo/ClickCounter';
 import { ErrorBoundary } from 'react-error-boundary';
 import FallbackComponet from './components/ErrorsDemo/FallbackComponet';
 import Practice from './components/Practice';
+import ClickCounter from './Hoc/CounterExample/ClickCounter';
+import HoverCounter from './Hoc/CounterExample/HoverCounter';
 
 const router = createBrowserRouter([
   {
@@ -44,17 +46,21 @@ const errorHandler = (error, errorInfo) => {
 };
 
 function App() {
+  console.log(HoverCounter.add(1, 2));
   return (
     <div className="App">
-      <ErrorBoundary
+      <ClickCounter name={'click counter'} />
+      <HoverCounter name={'mouse over counter'} />
+
+      {/* <ErrorBoundary
         FallbackComponent={FallbackComponet}
         onError={errorHandler}
       >
         <div>Learn React</div>
         <Infogain />
-        {/* <Hero heroName="Jocker" /> */}
+        <Hero heroName="Jocker" />
         <ClickCounter />
-      </ErrorBoundary>
+      </ErrorBoundary> */}
 
       {/* <ProductSearch /> */}
       {/* <MyApp /> */}
@@ -64,7 +70,7 @@ function App() {
       {/* <ArrayAdd /> */}
       {/* <ProductCountIncrement /> */}
       {/* <ReducerCounter /> */}
-      <Practice />
+      {/* <Practice /> */}
     </div>
   );
 }
