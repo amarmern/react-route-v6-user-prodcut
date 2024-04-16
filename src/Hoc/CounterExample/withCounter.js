@@ -16,7 +16,7 @@ const withCounter = (OriginalComponent) => {
       </div>
     );
   };
-  NewComponent.add = OriginalComponent.add;
+  NewComponent.add = OriginalComponent.add; //passing the static method using hoc.
   return NewComponent;
 };
 

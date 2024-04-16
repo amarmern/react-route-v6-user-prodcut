@@ -1,10 +1,10 @@
 import React from 'react';
 import withCounter from './withCounter';
 
-function ClickCounter(props) {
+function ClickCounter({ increment, name }) {
   return (
     <div>
-      <button onClick={props.increment}>{props.name}</button>
+      <button onClick={increment}>{name}</button>
     </div>
   );
 }
