@@ -1,10 +1,25 @@
 import React, { useReducer, useState } from 'react';
 
 function Practice() {
-  const [on, setOn] = useState(false);
+  const uid = 0;
+  const [user, setUser] = useState('');
+  const [list, setList] = useState([]);
+
   return (
     <div>
-      <button onClick={() => setOn(!on)}>{on ? 'ON' : 'OFF'}</button>
+      <input
+        name="user"
+        value={user}
+        onChange={(e) => setUser(e.target.value)}
+      />
+      <button onClick={() => setList([...list, { id: uid + 1, user: user }])}>
+        Add
+      </button>
+      <p>
+        {list.map((lst) => (
+          <li key={lst.id}>{lst.user}</li>
+        ))}
+      </p>
     </div>
   );
 }

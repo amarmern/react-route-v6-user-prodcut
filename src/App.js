@@ -1,3 +1,4 @@
+import { createContext, useState } from 'react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import './App.css';
 import Home from './pages/Home';
@@ -25,6 +26,11 @@ import FallbackComponet from './components/ErrorsDemo/FallbackComponet';
 import Practice from './components/Practice';
 import ClickCounter from './Hoc/CounterExample/ClickCounter';
 import HoverCounter from './Hoc/CounterExample/HoverCounter';
+import MyComponent from './components/MyComponent';
+import Memohooks from './hooks/Memohooks';
+import Userefhooks from './hooks/Demouserefhooks';
+import Callbackhooks from './hooks/Callbackhooks';
+import useLocalStorage from './customhooks/useLocalStorage';
 
 const router = createBrowserRouter([
   {
@@ -45,12 +51,25 @@ const errorHandler = (error, errorInfo) => {
   console.log('Loging', error, errorInfo);
 };
 
+export const MyContext = createContext('');
 function App() {
-  console.log(HoverCounter.add(1, 2));
+  const [name, setName] = useLocalStorage('name', '');
+  //const [text, setText] = useState('');
+  // console.log(HoverCounter.add(1, 2));
   return (
     <div className="App">
-      <ClickCounter name={'click counter'} />
-      <HoverCounter name={'mouse over counter'} />
+      <input
+        type="text"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+      {/* <Callbackhooks /> */}
+      {/* <Userefhooks /> */}
+      {/* <MyContext.Provider value={{ text, setText }}>
+        <MyComponent />
+      </MyContext.Provider> */}
+      {/* <ClickCounter name={'click counter'} />
+      <HoverCounter name={'mouse over counter'} /> */}
 
       {/* <ErrorBoundary
         FallbackComponent={FallbackComponet}
