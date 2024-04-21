@@ -50,6 +50,16 @@ function MainNavigation() {
               Tic toc
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              to="/searchperson"
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
+            >
+              Search Person
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </header>

@@ -31,6 +31,7 @@ import Memohooks from './hooks/Memohooks';
 import Userefhooks from './hooks/Demouserefhooks';
 import Callbackhooks from './hooks/Callbackhooks';
 import useLocalStorage from './customhooks/useLocalStorage';
+import SearchTerm from './pages/SearchTerm';
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,7 @@ const router = createBrowserRouter([
       { path: '/products', element: <ProductsPage /> },
       { path: '/posts', element: <PostsPage /> },
       { path: '/tictoc', element: <TicTac /> },
+      { path: '/searchperson', element: <SearchTerm /> },
       { path: '/products/:productId', element: <ProductDetailPage /> },
     ],
   },
@@ -83,7 +85,7 @@ function App() {
 
       {/* <ProductSearch /> */}
       {/* <MyApp /> */}
-      {/* <RouterProvider router={router} /> */}
+      <RouterProvider router={router} />
       {/* <Greeting /> */}
       {/* <Myref /> */}
       {/* <ArrayAdd /> */}
