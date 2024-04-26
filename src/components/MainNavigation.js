@@ -60,6 +60,26 @@ function MainNavigation() {
               Search Person
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              to="/listitems"
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
+            >
+              Item List of Check box
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/itemselect"
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
+            >
+              Item for single select
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </header>

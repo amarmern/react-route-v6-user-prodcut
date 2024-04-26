@@ -32,6 +32,9 @@ import Userefhooks from './hooks/Demouserefhooks';
 import Callbackhooks from './hooks/Callbackhooks';
 import useLocalStorage from './customhooks/useLocalStorage';
 import SearchTerm from './pages/SearchTerm';
+import AsyncPage from './components/AsyncPage';
+import ItemListChecked from './pages/ItemListChecked';
+import ItemListDropDown from './pages/ItemListDropDown';
 
 const router = createBrowserRouter([
   {
@@ -45,6 +48,8 @@ const router = createBrowserRouter([
       { path: '/posts', element: <PostsPage /> },
       { path: '/tictoc', element: <TicTac /> },
       { path: '/searchperson', element: <SearchTerm /> },
+      { path: '/listitems', element: <ItemListChecked /> },
+      { path: '/itemselect', element: <ItemListDropDown /> },
       { path: '/products/:productId', element: <ProductDetailPage /> },
     ],
   },
@@ -60,11 +65,12 @@ function App() {
   // console.log(HoverCounter.add(1, 2));
   return (
     <div className="App">
-      <input
+      {/* <AsyncPage /> */}
+      {/* <input
         type="text"
         value={name}
         onChange={(e) => setName(e.target.value)}
-      />
+      /> */}
       {/* <Callbackhooks /> */}
       {/* <Userefhooks /> */}
       {/* <MyContext.Provider value={{ text, setText }}>
@@ -85,13 +91,13 @@ function App() {
 
       {/* <ProductSearch /> */}
       {/* <MyApp /> */}
-      <RouterProvider router={router} />
+      {/* <RouterProvider router={router} /> */}
       {/* <Greeting /> */}
       {/* <Myref /> */}
       {/* <ArrayAdd /> */}
       {/* <ProductCountIncrement /> */}
       {/* <ReducerCounter /> */}
-      {/* <Practice /> */}
+      <Practice />
     </div>
   );
 }
