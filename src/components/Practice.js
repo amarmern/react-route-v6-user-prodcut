@@ -1,51 +1,30 @@
-import React, { useState } from 'react';
+import React, { useReducer, useRef, useState } from 'react';
 
-const Products = [
-  { id: 1, name: 'item1', isSelected: false },
-  { id: 2, name: 'item2', isSelected: false },
-  { id: 3, name: 'item3', isSelected: false },
-];
+const initialSate = {
+  count: 0,
+};
 
+function reducer(state, action) {
+  switch (action.type) {
+    case 'add':
+      return { count: state.count + 1 };
+    case 'sub':
+      return { count: state.count - 1 };
+    case 'reset':
+      return { count: initialSate.count };
+    default:
+      throw new Error();
+  }
+}
 function Practice() {
-  const [items, setItems] = useState(Products);
-  const handleChnage = (id) => {
-    setItems((prevItem) =>
-      prevItem.map((item) =>
-        item.id === id ? { ...item, isSelected: !item.isSelected } : item
-      )
-    );
-  };
+  const [state, dispatch] = useReducer(reducer, initialSate);
 
-  const handleAllCheckboxChange = () => {
-    const allSelected = Products.every((item) => item.isSelected);
-    setItems((prevItem) =>
-      prevItem.map((item) => ({ ...item, isSelected: !allSelected }))
-    );
-  };
   return (
     <>
-      <div>
-        <button onClick={handleAllCheckboxChange}>
-          {items.every((item) => item.isSelected)
-            ? 'Unchecked All'
-            : 'Checked All'}
-        </button>
-        {items.map((item) => (
-          <div key={item.id}>
-            <input
-              type="checkbox"
-              checked={item.isSelected}
-              onChange={() => handleChnage(item.id)}
-            />
-            <label>{item.name}</label>
-          </div>
-        ))}
-        <p>
-          {items.filter((item) => item.isSelected).length > 0
-            ? 'At least one Item Selected'
-            : 'No Item selected'}
-        </p>
-      </div>
+      <h1>{state.count}</h1>
+      <button onClick={() => dispatch({ type: 'add' })}>+</button>
+      <button onClick={() => dispatch({ type: 'sub' })}>-</button>
+      <button onClick={() => dispatch({ type: 'reset' })}>reset</button>
     </>
   );
 }
