@@ -7,11 +7,15 @@ import HomePage from './pages/Home';
 import RootLayout from './pages/Root';
 import ProductsPage from './pages/Products';
 import ProductDetailPage from './pages/ProductDetail';
-import ErrorPage from './pages/Error';
-import Greeting from './components/Greeting';
-import PostsPage from './pages/Posts';
-import Myref from './components/Myref';
+import ItemListChecked from './pages/ItemListChecked';
+import ItemListDropDown from './pages/ItemListDropDown';
+import SearchTerm from './pages/SearchTerm';
 import TicTac from './pages/TicTac';
+import PostsPage from './pages/Posts';
+import ErrorPage from './pages/Error';
+
+import Greeting from './components/Greeting';
+import Myref from './components/Myref';
 import MyApp from './components/MyApp';
 import { ArrayAdd } from './pages/ArrayAdd';
 import ProductCountIncrement from './Company/Gspann/ProductCountIncrement';
@@ -31,12 +35,11 @@ import Memohooks from './hooks/Memohooks';
 import Userefhooks from './hooks/Demouserefhooks';
 import Callbackhooks from './hooks/Callbackhooks';
 import useLocalStorage from './customhooks/useLocalStorage';
-import SearchTerm from './pages/SearchTerm';
 import AsyncPage from './components/AsyncPage';
-import ItemListChecked from './pages/ItemListChecked';
-import ItemListDropDown from './pages/ItemListDropDown';
 import { CounterContext } from './hooks/contexthooksdemo/Context/Counter';
-//import Counter from './components/Counter.js';
+import Counter from './customhooks/Counter';
+import ApiExample from './customhooks/ApiExample';
+//import Counter from './components/Counter.js'; // component for context use
 
 const router = createBrowserRouter([
   {
@@ -62,8 +65,8 @@ const errorHandler = (error, errorInfo) => {
 
 export const MyContext = createContext('');
 function App() {
-  const countereState = useContext(CounterContext);
-  const [name, setName] = useLocalStorage('name', '');
+  // const countereState = useContext(CounterContext);
+  // const [name, setName] = useLocalStorage('name', '');
   //const [text, setText] = useState('');
   // console.log(HoverCounter.add(1, 2));
   return (
@@ -71,11 +74,11 @@ function App() {
       {/* <h1>Count-- {countereState.count}</h1> */}
 
       {/* <AsyncPage /> */}
-      <input
+      {/* <input
         type="text"
         value={name}
         onChange={(e) => setName(e.target.value)}
-      />
+      /> */}
       {/* <Callbackhooks /> */}
       {/* <Userefhooks /> */}
       {/* <MyContext.Provider value={{ text, setText }}>
@@ -102,7 +105,9 @@ function App() {
       {/* <ArrayAdd /> */}
       {/* <ProductCountIncrement /> */}
       {/* <ReducerCounter /> */}
-      <Practice />
+      {/* <Practice /> */}
+      {/* <Counter /> */}
+      <ApiExample />
     </div>
   );
 }
