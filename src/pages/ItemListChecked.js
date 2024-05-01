@@ -26,9 +26,15 @@ const ItemListChecked = () => {
 
   return (
     <div>
-      <button onClick={handleAllCheckboxChange}>
+      {/* <button onClick={handleAllCheckboxChange}>
         {items.every((item) => item.isSelected) ? 'Uncheck All' : 'Check All'}
-      </button>
+      </button> */}
+
+      <input Type="checkbox" onClick={handleAllCheckboxChange}></input>
+      <label>
+        {items.every((item) => item.isSelected) ? 'Uncheck All' : 'Check All'}
+      </label>
+
       {items.map((item) => (
         <div key={item.id}>
           <input

@@ -99,7 +99,7 @@ function App() {
 
       {/* <ProductSearch /> */}
       {/* <MyApp /> */}
-      {/* <RouterProvider router={router} /> */}
+      <RouterProvider router={router} />
       {/* <Greeting /> */}
       {/* <Myref /> */}
       {/* <ArrayAdd /> */}
