@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useContext, useState } from 'react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import './App.css';
 import Home from './pages/Home';
@@ -35,6 +35,8 @@ import SearchTerm from './pages/SearchTerm';
 import AsyncPage from './components/AsyncPage';
 import ItemListChecked from './pages/ItemListChecked';
 import ItemListDropDown from './pages/ItemListDropDown';
+import { CounterContext } from './hooks/contexthooksdemo/Context/Counter';
+//import Counter from './components/Counter.js';
 
 const router = createBrowserRouter([
   {
@@ -60,17 +62,20 @@ const errorHandler = (error, errorInfo) => {
 
 export const MyContext = createContext('');
 function App() {
+  const countereState = useContext(CounterContext);
   const [name, setName] = useLocalStorage('name', '');
   //const [text, setText] = useState('');
   // console.log(HoverCounter.add(1, 2));
   return (
     <div className="App">
+      {/* <h1>Count-- {countereState.count}</h1> */}
+
       {/* <AsyncPage /> */}
-      {/* <input
+      <input
         type="text"
         value={name}
         onChange={(e) => setName(e.target.value)}
-      /> */}
+      />
       {/* <Callbackhooks /> */}
       {/* <Userefhooks /> */}
       {/* <MyContext.Provider value={{ text, setText }}>
