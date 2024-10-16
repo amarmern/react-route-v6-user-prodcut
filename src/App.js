@@ -39,6 +39,10 @@ import AsyncPage from './components/AsyncPage';
 import { CounterContext } from './hooks/contexthooksdemo/Context/Counter';
 import Counter from './customhooks/Counter';
 import ApiExample from './customhooks/ApiExample';
+import DerivedStateComponent from './Company/wissen/DerivedStateComponent';
+import CounterUseCallback from './Company/wissen/CounterUseCallback';
+import ParentComponent from './Company/wissen/ParentComponent';
+//import Timer from './Company/wissen/Timer';
 //import Counter from './components/Counter.js'; // component for context use
 
 const router = createBrowserRouter([
@@ -107,7 +111,11 @@ function App() {
       {/* <ReducerCounter /> */}
       {/* <Practice /> */}
       {/* <Counter /> */}
-      <ApiExample />
+      {/* <ApiExample /> */}
+      {/* <Timer /> */}
+      {/* <DerivedStateComponent /> */}
+      {/* <CounterUseCallback /> */}
+      {/* <ParentComponent /> */}
     </div>
   );
 }

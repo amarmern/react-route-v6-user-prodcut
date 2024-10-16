@@ -24,6 +24,7 @@ export default function Counter() {
   if (startTime && now) {
     secondPass = (now - startTime) / 1000;
   }
+
   return (
     <div className="App">
       <h1> Time Passed {secondPass.toFixed(2)} </h1>
