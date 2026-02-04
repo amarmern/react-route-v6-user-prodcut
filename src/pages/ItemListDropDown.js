@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 
-const Products = [
-  { id: 1, name: 'item1' },
-  { id: 2, name: 'item2' },
-  { id: 3, name: 'item3' },
-];
-
 const ItemListDropDown = () => {
+  const Products = [
+    { id: 1, name: 'Laptop' },
+    { id: 2, name: 'mobile' },
+    { id: 3, name: 'headphone' },
+  ];
   const [selectedItem, setSelectedItem] = useState(null);
 
   const handleSelectChange = (event) => {
