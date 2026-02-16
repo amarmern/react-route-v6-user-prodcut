@@ -1,7 +1,7 @@
 import { createContext, useContext, useState } from 'react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import './App.css';
-import Home from './pages/Home';
+//import Home from './pages/Home';
 import Users from './pages/Users';
 import HomePage from './pages/Home';
 import RootLayout from './pages/Root';
@@ -31,7 +31,7 @@ import Practice from './components/Practice';
 import ClickCounter from './Hoc/CounterExample/ClickCounter';
 import HoverCounter from './Hoc/CounterExample/HoverCounter';
 import MyComponent from './components/MyComponent';
-import Memohooks from './hooks/Memohooks';
+//import Memohooks from './hooks/Memohooks';
 import Userefhooks from './hooks/Demouserefhooks';
 import Callbackhooks from './hooks/Callbackhooks';
 import useLocalStorage from './customhooks/useLocalStorage';
@@ -42,7 +42,7 @@ import ApiExample from './customhooks/ApiExample';
 import DerivedStateComponent from './Company/wissen/DerivedStateComponent';
 import CounterUseCallback from './Company/wissen/CounterUseCallback';
 import ParentComponent from './Company/wissen/ParentComponent';
-//import Timer from './Company/wissen/Timer';
+import Timer from './Company/wissen/Timer';
 //import Counter from './components/Counter.js'; // component for context use
 
 const router = createBrowserRouter([
@@ -69,27 +69,27 @@ const errorHandler = (error, errorInfo) => {
 
 export const MyContext = createContext('');
 function App() {
-  // const countereState = useContext(CounterContext);
-  // const [name, setName] = useLocalStorage('name', '');
-  //const [text, setText] = useState('');
-  // console.log(HoverCounter.add(1, 2));
+  const countereState = useContext(CounterContext);
+  const [name, setName] = useLocalStorage('name', '');
+  const [text, setText] = useState('');
+  console.log(HoverCounter.add(1, 2));
   return (
     <div className="App">
-      {/* <h1>Count-- {countereState.count}</h1> */}
+      <h1>Count-- {countereState.count}</h1>
 
-      {/* <AsyncPage /> */}
-      {/* <input
+      <AsyncPage />
+      <input
         type="text"
         value={name}
         onChange={(e) => setName(e.target.value)}
-      /> */}
-      {/* <Callbackhooks /> */}
-      {/* <Userefhooks /> */}
-      {/* <MyContext.Provider value={{ text, setText }}>
+      />
+      <Callbackhooks />
+      <Userefhooks />
+      <MyContext.Provider value={{ text, setText }}>
         <MyComponent />
-      </MyContext.Provider> */}
-      {/* <ClickCounter name={'click counter'} />
-      <HoverCounter name={'mouse over counter'} /> */}
+      </MyContext.Provider>
+      <ClickCounter name={'click counter'} />
+      <HoverCounter name={'mouse over counter'} />
 
       {/* <ErrorBoundary
         FallbackComponent={FallbackComponet}
@@ -101,21 +101,21 @@ function App() {
         <ClickCounter />
       </ErrorBoundary> */}
 
-      {/* <ProductSearch /> */}
-      {/* <MyApp /> */}
+      <ProductSearch />
+      <MyApp />
       <RouterProvider router={router} />
-      {/* <Greeting /> */}
-      {/* <Myref /> */}
-      {/* <ArrayAdd /> */}
-      {/* <ProductCountIncrement /> */}
-      {/* <ReducerCounter /> */}
-      {/* <Practice /> */}
-      {/* <Counter /> */}
-      {/* <ApiExample /> */}
-      {/* <Timer /> */}
-      {/* <DerivedStateComponent /> */}
-      {/* <CounterUseCallback /> */}
-      {/* <ParentComponent /> */}
+      <Greeting />
+      <Myref />
+      <ArrayAdd />
+      <ProductCountIncrement />
+      <ReducerCounter />
+      <Practice />
+      <Counter />
+      <ApiExample />
+      <Timer />
+      <DerivedStateComponent />
+      <CounterUseCallback />
+      <ParentComponent />
     </div>
   );
 }
