@@ -80,6 +80,17 @@ function MainNavigation() {
               Item for single select
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              to="/multistateform"
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
+            >
+              {' '}
+              MultiState Form
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </header>

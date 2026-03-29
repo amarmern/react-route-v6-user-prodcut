@@ -43,6 +43,7 @@ import DerivedStateComponent from './Company/wissen/DerivedStateComponent';
 import CounterUseCallback from './Company/wissen/CounterUseCallback';
 import ParentComponent from './Company/wissen/ParentComponent';
 import Timer from './Company/wissen/Timer';
+import MultiStepForm from './pages/MultiStepForm';
 //import Counter from './components/Counter.js'; // component for context use
 
 const router = createBrowserRouter([
@@ -60,6 +61,7 @@ const router = createBrowserRouter([
       { path: '/listitems', element: <ItemListChecked /> },
       { path: '/itemselect', element: <ItemListDropDown /> },
       { path: '/products/:productId', element: <ProductDetailPage /> },
+      { path: '/multistateform', element: <MultiStepForm /> },
     ],
   },
 ]);
@@ -75,9 +77,10 @@ function App() {
   console.log(HoverCounter.add(1, 2));
   return (
     <div className="App">
-      <h1>Count-- {countereState.count}</h1>
+      <RouterProvider router={router} />
+      {/* <h1>Count-- {countereState.count}</h1> */}
 
-      <AsyncPage />
+      {/* <AsyncPage />
       <input
         type="text"
         value={name}
@@ -89,7 +92,7 @@ function App() {
         <MyComponent />
       </MyContext.Provider>
       <ClickCounter name={'click counter'} />
-      <HoverCounter name={'mouse over counter'} />
+      <HoverCounter name={'mouse over counter'} /> */}
 
       {/* <ErrorBoundary
         FallbackComponent={FallbackComponet}
@@ -101,9 +104,8 @@ function App() {
         <ClickCounter />
       </ErrorBoundary> */}
 
-      <ProductSearch />
+      {/* <ProductSearch />
       <MyApp />
-      <RouterProvider router={router} />
       <Greeting />
       <Myref />
       <ArrayAdd />
@@ -115,7 +117,7 @@ function App() {
       <Timer />
       <DerivedStateComponent />
       <CounterUseCallback />
-      <ParentComponent />
+      <ParentComponent /> */}
     </div>
   );
 }
