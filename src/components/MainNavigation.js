@@ -91,6 +91,17 @@ function MainNavigation() {
               MultiState Form
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              to="/filtersearch"
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
+            >
+              {' '}
+              select serach
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </header>

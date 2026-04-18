@@ -44,6 +44,7 @@ import CounterUseCallback from './Company/wissen/CounterUseCallback';
 import ParentComponent from './Company/wissen/ParentComponent';
 import Timer from './Company/wissen/Timer';
 import MultiStepForm from './pages/MultiStepForm';
+import FilterandSearch from './Company/wissen/FilterandSearch';
 //import Counter from './components/Counter.js'; // component for context use
 
 const router = createBrowserRouter([
@@ -62,6 +63,7 @@ const router = createBrowserRouter([
       { path: '/itemselect', element: <ItemListDropDown /> },
       { path: '/products/:productId', element: <ProductDetailPage /> },
       { path: '/multistateform', element: <MultiStepForm /> },
+      { path: '/filtersearch', element: <FilterandSearch /> },
     ],
   },
 ]);
@@ -78,6 +80,7 @@ function App() {
   return (
     <div className="App">
       <RouterProvider router={router} />
+      {/* <Greeting /> */}
       {/* <h1>Count-- {countereState.count}</h1> */}
 
       {/* <AsyncPage />
@@ -106,7 +109,7 @@ function App() {
 
       {/* <ProductSearch />
       <MyApp />
-      <Greeting />
+      
       <Myref />
       <ArrayAdd />
       <ProductCountIncrement />
