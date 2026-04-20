@@ -102,6 +102,17 @@ function MainNavigation() {
               select serach
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              to="/categorywisefilter"
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
+            >
+              {' '}
+              category wise product filter
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </header>
