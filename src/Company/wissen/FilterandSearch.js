@@ -16,11 +16,11 @@ export default function FilterandSearch() {
 
   // 🔥 Combined filtering
   const filteredStudent = student.filter((item) => {
-    const matchDropdown = selectedId ? item.id === Number(selectedId) : true;
-
     const matchSearch = item.name
       .toLowerCase()
       .includes(searchText.toLowerCase());
+
+    const matchDropdown = selectedId ? item.id === Number(selectedId) : true;
 
     return matchDropdown && matchSearch;
   });
